@@ -1,0 +1,41 @@
+{
+  "name": "changelog42",
+  "version": "0.90.0",
+  "description": "A changelog creator for git repositories",
+  "keywords": [
+    "git-log",
+    "changelog",
+    "commits"
+  ],
+  "bin": {
+    "changelog42": "./bin/changelog42.js"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Malte-Thorben Bruns",
+    "email": "skenqbx@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:skenqbx/changelog42.git"
+  },
+  "private": true,
+  "dependencies": {},
+  "optionalDependencies": {},
+  "devDependencies": {
+    "eslint": "0.18.0",
+    "istanbul": "0.3.13",
+    "mocha": "2.2.4",
+    "next-update": "0.7.4"
+  },
+  "scripts": {
+    "lint": "node_modules/.bin/eslint ./",
+    "test": "node_modules/.bin/eslint ./ && node_modules/.bin/istanbul cover node_modules/.bin/_mocha -- ./test",
+    "update": "node_modules/.bin/next-update -k",
+    "clean": "rm -rf node_modules/ && rm -rf coverage/ && rm npm-debug.log"
+  },
+  "engines": {
+    "node": ">0.10.30",
+    "npm": "~2.7.5"
+  }
+}
