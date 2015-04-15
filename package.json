@@ -1,6 +1,6 @@
 {
   "name": "changelog42",
-  "version": "0.90.0",
+  "version": "0.2.0",
   "description": "A changelog creator for git repositories",
   "keywords": [
     "git-log",
@@ -36,6 +36,6 @@
   },
   "engines": {
     "node": ">0.10.30",
-    "npm": "~2.7.5"
+    "npm": "~2.7.6"
   }
 }

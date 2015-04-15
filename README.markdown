@@ -6,7 +6,72 @@
 Stability: 1 - Experimental
 ```
 
-### Commit Message
+## Usage
+
+```
+$ changelog42 --help
+
+ChangeLog42 v0.2.0
+
+Usage: changelog.js [--since={tag}] [--commits={url}] [options]
+
+  When --since is not set the lastest tag is selected
+
+  options
+   --no-group    do not group commits by prefix
+   --no-author   do not print author name
+   --no-link     do not link commit hashes
+   --merge       print merge commits
+   --json        output JSON
+   --commit-url  commit base url
+
+```
+
+## Example
+
+```
+$ changelog42 --no-author \
+    --since=4aedc1b782224475562d5fdfb9f89ea7d007fb5e
+
+ - [[`ec5e5e9547`](<commit-url>/ec5e5e9547f8ba0f55c4f5b2addb3da944678440)] - **(SEMVER-MAJOR) bin**: add --commit-url argument
+ - [[`991070866a`](<commit-url>/991070866acf913b10ea6462c31f5a4d62556061)] - **deps**: next-update 0.7.4 -> 0.7.6
+ - [[`2e5547d18b`](<commit-url>/2e5547d18b7a552475ef212dcad6b5cf4c6f1561)] - **deps**: eslint 0.18.0 -> 0.19.0
+ - [[`46330f2de2`](<commit-url>/46330f2de22ebcc90a04fc48f964e86cf6d2ca9a)] - **(SEMVER-MINOR) prefix**: added '/' as allowed character
+```
+
+**with --no-link**
+
+```
+$ changelog42 --no-author --no-link \
+    --since=4aedc1b782224475562d5fdfb9f89ea7d007fb5e
+
+ - [`ec5e5e9547`] - **(SEMVER-MAJOR) bin**: add --commit-url argument
+ - [`991070866a`] - **deps**: next-update 0.7.4 -> 0.7.6
+ - [`2e5547d18b`] - **deps**: eslint 0.18.0 -> 0.19.0
+ - [`46330f2de2`] - **(SEMVER-MINOR) prefix**: added '/' as allowed character
+```
+
+**with --commit-url**
+
+```
+$ changelog42 --no-author \
+    --since=4aedc1b782224475562d5fdfb9f89ea7d007fb5e \
+    --commit-url=https://github.com/skenqbx/changelog42/commit
+
+ - [[`ec5e5e9547`](https://github.com/skenqbx/changelog42/commit/ec5e5e9547f8ba0f55c4f5b2addb3da944678440)] - **(SEMVER-MAJOR) bin**: add --commit-url argument
+ - [[`991070866a`](https://github.com/skenqbx/changelog42/commit/991070866acf913b10ea6462c31f5a4d62556061)] - **deps**: next-update 0.7.4 -> 0.7.6
+ - [[`2e5547d18b`](https://github.com/skenqbx/changelog42/commit/2e5547d18b7a552475ef212dcad6b5cf4c6f1561)] - **deps**: eslint 0.18.0 -> 0.19.0
+ - [[`46330f2de2`](https://github.com/skenqbx/changelog42/commit/46330f2de22ebcc90a04fc48f964e86cf6d2ca9a)] - **(SEMVER-MINOR) prefix**: added '/' as allowed character
+```
+
+Anyway, the point is that it looks like this when rendered:
+
+ - [[`ec5e5e9547`](https://github.com/skenqbx/changelog42/commit/ec5e5e9547f8ba0f55c4f5b2addb3da944678440)] - **(SEMVER-MAJOR) bin**: add --commit-url argument
+ - [[`991070866a`](https://github.com/skenqbx/changelog42/commit/991070866acf913b10ea6462c31f5a4d62556061)] - **deps**: next-update 0.7.4 -> 0.7.6
+ - [[`2e5547d18b`](https://github.com/skenqbx/changelog42/commit/2e5547d18b7a552475ef212dcad6b5cf4c6f1561)] - **deps**: eslint 0.18.0 -> 0.19.0
+ - [[`46330f2de2`](https://github.com/skenqbx/changelog42/commit/46330f2de22ebcc90a04fc48f964e86cf6d2ca9a)] - **(SEMVER-MINOR) prefix**: added '/' as allowed character
+
+## Commit Messages
 
 ```
 {scope}: {message}
@@ -20,7 +85,6 @@ Supported tags are;
 
  - `SEMVER-MINOR`
  - `SEMVER-MAJOR`
- - `PR-URL #X`
 
 ## Tests
 
