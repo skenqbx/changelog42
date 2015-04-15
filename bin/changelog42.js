@@ -61,7 +61,9 @@ for (i = 2; i < process.argv.length; ++i) {
 
 var format = '{"hash":"%H","subject":"%s","author":{"name":"%an","email":"%ae"},"body":"%b"}';
 var cmd = 'git log --format=\'' + format + '\'';
-var re = /^[a-zA-Z0-9._-]+:/g;
+
+// THE prefix RegExp
+var re = /^[a-zA-Z0-9\/._-]+:/g;
 
 var sincecmd = 'git show -s --format=%ad `git rev-list --max-count=1 ' + options.since + '`';
 var groups = {};
