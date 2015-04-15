@@ -32,7 +32,7 @@ for (i = 2; i < process.argv.length; ++i) {
       console.log('  When --since is not set the lastest tag is selected');
       console.log();
       console.log('  options');
-      console.log('   --no-group    do not group commits by prefix');
+      console.log('   --no-group    do not group commits by scope');
       console.log('   --no-author   do not print author name');
       console.log('   --no-link     do not link commit hashes');
       console.log('   --merge       print merge commits');
@@ -69,8 +69,8 @@ for (i = 2; i < process.argv.length; ++i) {
 var format = '{"hash":"%H","subject":"%s","author":{"name":"%an","email":"%ae"},"body":"%b"}';
 var cmd = 'git log --format=\'' + format + '\'';
 
-// THE prefix RegExp
-var re = /^[a-zA-Z0-9\/._-]+:/g;
+// THE Scope RegExp
+var scopeRE = /^[a-zA-Z0-9\/._-]+:/g;
 
 var sincecmd = 'git show -s --format=%ad `git rev-list --max-count=1 ' + options.since + '`';
 var groups = {};
@@ -111,8 +111,8 @@ child_process.exec(sincecmd, function(err, stdout) {
         continue;
       }
 
-      // detect group prefixes
-      matches = subject.match(re);
+      // detect group scopes
+      matches = subject.match(scopeRE);
       if (matches) {
         commit.markdown = '**' + subject.substr(0, matches[0].length - 1) + '**:' +
             subject.substr(matches[0].length);

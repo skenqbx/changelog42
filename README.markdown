@@ -18,7 +18,7 @@ Usage: changelog.js [--since={tag}] [--commits={url}] [options]
   When --since is not set the lastest tag is selected
 
   options
-   --no-group    do not group commits by prefix
+   --no-group    do not group commits by scope
    --no-author   do not print author name
    --no-link     do not link commit hashes
    --merge       print merge commits
@@ -81,10 +81,13 @@ Anyway, the point is that it looks like this when rendered:
 {footer}
 ```
 
+Messages containing `working on` are ignored.
+
 Supported tags are;
 
  - `SEMVER-MINOR`
  - `SEMVER-MAJOR`
+ - `PR-URL` - TBD
 
 ## Tests
 
