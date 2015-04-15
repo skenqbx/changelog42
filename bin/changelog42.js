@@ -1,31 +1,33 @@
 #!/usr/bin/env node
 'use strict';
+var path = require('path');
 var child_process = require('child_process');
+var pkg = require(path.resolve(__dirname, '../package.json'));
+
 /**
  * ChangeLog Maker
- *
- * @version 0.2.0
  */
-var commitURL = 'https://github.com/skenqbx/file-emitter/commit/';
-
 var i, t, options = {
   since: '--tags',
   group: true,
   author: true,
   link: true,
   merge: false,
-  json: false
+  json: false,
+  commitURL: '<commit-url>'
 };
 
+
+// parse arguments
 for (i = 2; i < process.argv.length; ++i) {
   t = process.argv[i].split(/=/);
 
   switch (t[0]) {
     case '--help':
       console.log();
-      console.log('ChangeLog Maker v0.2.0');
+      console.log('ChangeLog42 v' + pkg.version);
       console.log();
-      console.log('Usage: changelog.js [--since={tag}] [options]');
+      console.log('Usage: changelog.js [--since={tag}] [--commits={url}] [options]');
       console.log();
       console.log('  When --since is not set the lastest tag is selected');
       console.log();
@@ -35,6 +37,7 @@ for (i = 2; i < process.argv.length; ++i) {
       console.log('   --no-link     do not link commit hashes');
       console.log('   --merge       print merge commits');
       console.log('   --json        output JSON');
+      console.log('   --commit-url  commit base url');
       console.log();
 
       return;
@@ -56,8 +59,12 @@ for (i = 2; i < process.argv.length; ++i) {
     case '--json':
       options.json = true;
       break;
+    case '--commit-url':
+      options.commitURL = t[1] || options.commitURL;
+      break;
   }
 }
+
 
 var format = '{"hash":"%H","subject":"%s","author":{"name":"%an","email":"%ae"},"body":"%b"}';
 var cmd = 'git log --format=\'' + format + '\'';
@@ -127,7 +134,7 @@ child_process.exec(sincecmd, function(err, stdout) {
 
       if (options.link) {
         commit.markdown = ' - [[`' + commit.hash.substr(0, 10) + '`](' +
-            commitURL + commit.hash + ')] - ' + commit.markdown;
+            options.commitURL + '/' + commit.hash + ')] - ' + commit.markdown;
       } else {
         commit.markdown = ' - [`' + commit.hash.substr(0, 10) + '`] - ' +
             commit.markdown;
