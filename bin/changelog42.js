@@ -78,8 +78,9 @@ changelog.getDate(changelog.since, function(err, date) {
       return console.log(err2.message);
     }
     var markdown = changelog.toMarkdown(commits);
-    var joint = '  - ';
+    var joint = '\n  - ';
 
-    console.log(joint + markdown.join(joint));
+    console.log('\n### Commits');
+    console.log(joint + markdown.join(joint) + '\n');
   });
 });
