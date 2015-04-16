@@ -2,7 +2,9 @@
 'use strict';
 var path = require('path');
 var child_process = require('child_process');
-var pkg = require(path.resolve(__dirname, '../package.json'));
+
+var ChangeLog = require('../lib');
+
 
 /**
  * ChangeLog Maker
@@ -13,7 +15,6 @@ var i, t, options = {
   author: true,
   link: true,
   merge: false,
-  json: false,
   commitURL: '<commit-url>'
 };
 
@@ -25,7 +26,7 @@ for (i = 2; i < process.argv.length; ++i) {
   switch (t[0]) {
     case '--help':
       console.log();
-      console.log('ChangeLog42 v' + pkg.version);
+      console.log('ChangeLog42');
       console.log();
       console.log('Usage: changelog.js [--since={tag}] [--commits={url}] [options]');
       console.log();
@@ -65,112 +66,20 @@ for (i = 2; i < process.argv.length; ++i) {
   }
 }
 
+var changelog = new ChangeLog(options);
 
-var format = '{"hash":"%H","subject":"%s","author":{"name":"%an","email":"%ae"},"body":"%b"}';
-var cmd = 'git log --format=\'' + format + '\'';
-
-// THE Scope RegExp
-var scopeRE = /^[a-zA-Z0-9\/._-]+:/g;
-
-var sincecmd = 'git show -s --format=%ad `git rev-list --max-count=1 ' + options.since + '`';
-var groups = {};
-
-
-child_process.exec(sincecmd, function(err, stdout) {
+changelog.getDate(changelog.since, function(err, date) {
   if (err) {
-    return console.log('ERROR', err.message);
+    return console.log(err.message);
   }
-  var since = stdout.trim();
 
-  cmd += ' --since="' + since + '"';
-
-  child_process.exec(cmd, function(err2, stdout2) {
+  changelog.getLog(date, function(err2, commits) {
     if (err2) {
-      return console.log('ERROR', err2.message);
+      return console.log(err2.message);
     }
+    var markdown = changelog.toMarkdown(commits);
+    var joint = '  - ';
 
-    var commits = stdout2
-        .substr(1)
-        .trim()
-        .replace(/\n/g, '\\n')
-        .split('}\\n{');
-
-    commits.pop(); // remove limiting commit AND closing curly
-
-    var j, k, commit, matches, subject, output;
-
-    for (j = 0; j < commits.length; ++j) {
-      commits[j] = '{' + commits[j] + '}';
-      commit = commits[j] = JSON.parse(commits[j]);
-      subject = commit.subject;
-
-      if (subject.toLowerCase().indexOf('working on') > -1 ||
-          !options.merge && subject.substr(0, 5) === 'Merge') {
-        commits.splice(j, 1);
-        --j;
-        continue;
-      }
-
-      // detect group scopes
-      matches = subject.match(scopeRE);
-      if (matches) {
-        commit.markdown = '**' + subject.substr(0, matches[0].length - 1) + '**:' +
-            subject.substr(matches[0].length);
-      } else {
-        commit.markdown = subject;
-      }
-
-      // detect senver tags
-      if (commit.body && commit.body.indexOf('SEMVER-MAJOR') > -1) {
-        commit.major = true;
-        commit.markdown = '**(SEMVER-MAJOR) **' + commit.markdown;
-        commit.markdown = commit.markdown.replace(/\*\*\*\*/, '');
-
-      } else if (commit.body && commit.body.indexOf('SEMVER-MINOR') > -1) {
-        commit.minor = true;
-        commit.markdown = '**(SEMVER-MINOR) **' + commit.markdown;
-        commit.markdown = commit.markdown.replace(/\*\*\*\*/, '');
-      }
-
-      if (options.link) {
-        commit.markdown = ' - [[`' + commit.hash.substr(0, 10) + '`](' +
-            options.commitURL + '/' + commit.hash + ')] - ' + commit.markdown;
-      } else {
-        commit.markdown = ' - [`' + commit.hash.substr(0, 10) + '`] - ' +
-            commit.markdown;
-      }
-
-      if (options.author) {
-        commit.markdown += ' (' + commit.author.name + ')';
-      }
-
-      if (matches && options.group) {
-        groups[matches[0]] = groups[matches[0]] || [];
-        groups[matches[0]].push(commit);
-      } else {
-        groups.___ = groups.___ || [];
-        groups.___.push(commit);
-      }
-    }
-
-    output = [];
-
-    var keys = Object.keys(groups).sort();
-
-    for (j = 0; j < keys.length; ++j) {
-      for (k = 0; k < groups[keys[j]].length; ++k) {
-        if (options.json) {
-          output.push(groups[keys[j]][k]);
-        } else {
-          console.log(groups[keys[j]][k].markdown);
-        }
-      }
-    }
-
-    if (options.json) {
-      console.log(JSON.stringify(output, null, 2));
-      // console.log(JSON.stringify(output));
-      return;
-    }
+    console.log(joint + markdown.join(joint));
   });
 });
