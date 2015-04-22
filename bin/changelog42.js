@@ -28,9 +28,9 @@ for (i = 2; i < process.argv.length; ++i) {
       console.log();
       console.log('ChangeLog42');
       console.log();
-      console.log('Usage: changelog.js [--since={tag}] [--commits={url}] [options]');
+      console.log('Usage: changelog42 [--since={tag}] [--commit-url={url}] [options]');
       console.log();
-      console.log('  When --since is not set the lastest tag is selected');
+      console.log('  When --since is not set the latest tag is selected');
       console.log();
       console.log('  options');
       console.log('   --no-group    do not group commits by scope');
