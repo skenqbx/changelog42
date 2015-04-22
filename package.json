@@ -1,6 +1,6 @@
 {
   "name": "changelog42",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A changelog creator for git repositories",
   "keywords": [
     "git-log",
@@ -19,7 +19,6 @@
     "type": "git",
     "url": "git@github.com:skenqbx/changelog42.git"
   },
-  "private": true,
   "dependencies": {},
   "optionalDependencies": {},
   "devDependencies": {
