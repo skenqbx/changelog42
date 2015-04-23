@@ -1,5 +1,17 @@
 # [ChangeLog42](./README.markdown) ChangeLog
 
+## 2015-04-24, [v0.4.0](https://github.com/skenqbx/changelog42/tree/v0.4.0) **_<small>unstable</small>_**
+
+### Known issues
+
+  - Double quotes in subject or body of a commit break the module
+
+### Commits
+
+  - [[`96b7d94ec9`](https://github.com/skenqbx/changelog42/commit/96b7d94ec9abbbe360163abad6ae3d7735ea8ce8)] - **changelog**: newest commits at top for equal scopes
+  - [[`eb04caa2ed`](https://github.com/skenqbx/changelog42/commit/eb04caa2ed7f5f595c6a724b5cf7afc8dd0487e9)] - **package**: add AUTHORS
+
+
 ## 2015-04-22, [v0.3.0](https://github.com/skenqbx/changelog42/tree/v0.3.0) **_<small>unstable</small>_**
 
 ### Commits

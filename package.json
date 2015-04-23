@@ -1,6 +1,6 @@
 {
   "name": "changelog42",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A changelog creator for git repositories",
   "keywords": [
     "git-log",
