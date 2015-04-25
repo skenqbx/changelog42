@@ -1,5 +1,14 @@
 # [ChangeLog42](./README.markdown) ChangeLog
 
+## 2015-04-25, [v0.5.0](https://github.com/skenqbx/changelog42/tree/v0.5.0) **_<small>unstable</small>_**
+
+### Commits
+
+  - [[`9fb3c9488a`](https://github.com/skenqbx/changelog42/commit/9fb3c9488ab1a7521c87ddcbcb50236dde6218ee)] - **changelog**: escape double quotes in subject/body
+  - [[`a68b6d75e4`](https://github.com/skenqbx/changelog42/commit/a68b6d75e48b001a5e812db8d32917083788c64e)] - **doc**: ToC and API
+  - [[`bc8d870676`](https://github.com/skenqbx/changelog42/commit/bc8d870676ef08b2fd71113e303a051fbf6e9454)] - **test**: correct suite name
+
+
 ## 2015-04-24, [v0.4.0](https://github.com/skenqbx/changelog42/tree/v0.4.0) **_<small>unstable</small>_**
 
 ### Known issues
