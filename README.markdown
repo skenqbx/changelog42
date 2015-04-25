@@ -2,8 +2,24 @@
 
 **_A changelog creator for git repositories_**
 
+```js
+Stability: 2 - Unstable
 ```
-Stability: 1 - Experimental
+
+## Table of Contents
+
+  - [Usage](#usage)
+  - [Examples](#examples)
+  - [Commit Messages](#commit-messages)
+  - [API](#api)
+  - [Tests](#tests)
+  - [ChangeLog](./CHANGELOG.markdown)
+  - [License](./LICENSE)
+
+## Installation
+
+```
+$ npm install changelog42 -g
 ```
 
 ## Usage
@@ -26,7 +42,7 @@ Usage: changelog42 [--since={tag}] [--commit-url={url}] [options]
    --commit-url  commit base url
 ```
 
-## Example
+## Examples
 
 ```
 $ changelog42 --no-author \
@@ -94,6 +110,31 @@ Supported tags are;
 
  - `SEMVER-MINOR`
  - `SEMVER-MAJOR`
+
+## API
+
+### Class: ChangeLog
+
+#### new ChangeLog(opt_options)
+
+**opt_options**
+
+  - `{string} cwd` Working directory aka. repository path
+  - `{string} since`
+  - `{boolean} group` When `true` group(sort) commits by scope
+  - `{boolean} author` When `true` add the commit author
+  - `{boolean} link` When `true` link commit hashes with `commitURL`
+  - `{boolean} merge` When `true` include merge commits
+  - `{string} commitURL` defaults to `<commit-url>`
+
+#### changelog.getDate(commitish, callback)
+Retrieve the datetime for an commit hash or tag.
+
+#### changelog.getLog(since, callback)
+Generate an array of commits.
+
+#### changelog.toMarkdown(commits)
+Generate an array of commits formatted as markdown.
 
 ## Tests
 
