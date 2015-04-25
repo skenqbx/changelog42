@@ -4,7 +4,7 @@
 var ChangeLog = require('../');
 
 
-suite('scopes', function() {
+suite('subject/body', function() {
 
   var subjects = [
     '{"hash":"7b60e5714dc20403c8029505b45679cd66b426a4","time":1426157886,' +
