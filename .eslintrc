@@ -33,7 +33,7 @@
     "consistent-return": 0,
     "consistent-this": [2, "self"],
     "curly": [2, "all"],
-    "dot-notation": [2, "allowKeywords"],
+    "dot-notation": [2, {"allowKeywords": true}],
     "eol-last": 2,
     "eqeqeq": [2, "smart"],
     "indent": [2, 2],
