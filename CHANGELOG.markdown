@@ -1,5 +1,17 @@
 # [ChangeLog42](./README.markdown) ChangeLog
 
+## 2015-06-18, [v0.6.0](https://github.com/skenqbx/changelog42/tree/v0.6.0) **_<small>unstable</small>_**
+
+### Commits
+
+  - [[`0664116d6a`](https://github.com/skenqbx/changelog42/commit/0664116d6aa58a7766a18ef6ba539c9def0e4791)] - **changelog**: safeguard JSON parsing
+  - [[`78633efd07`](https://github.com/skenqbx/changelog42/commit/78633efd0754e1a7192f852f28d9b4160eace8ca)] - **changelog**: fix subject & body escaping
+  - [[`e41b1593fe`](https://github.com/skenqbx/changelog42/commit/e41b1593fe947b3b669d6ac3a950f7be592da404)] - **changelog**: handle tabulators in subject & body
+  - [[`0896fc2742`](https://github.com/skenqbx/changelog42/commit/0896fc27424de62bcd8d772a4e91be2c4a04461c)] - **deps**: update
+  - [[`6e2773ce82`](https://github.com/skenqbx/changelog42/commit/6e2773ce8273c8019aae58d1c884bf325ad13367)] - **package**: add log script
+  - [[`9c93d9fb9a`](https://github.com/skenqbx/changelog42/commit/9c93d9fb9a13ba377f6e30f889bbd02e41824a73)] - **package**: fix .eslintrc rule
+
+
 ## 2015-04-25, [v0.5.0](https://github.com/skenqbx/changelog42/tree/v0.5.0) **_<small>unstable</small>_**
 
 ### Commits
