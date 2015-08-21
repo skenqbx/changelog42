@@ -77,10 +77,14 @@ changelog.getDate(changelog.since, function(err, date) {
     if (err2) {
       return console.log(err2.message);
     }
-    var markdown = changelog.toMarkdown(commits);
-    var joint = '\n  - ';
+    if (options.json) {
+      console.log(commits);
+    } else {
+      var markdown = changelog.toMarkdown(commits);
+      var joint = '\n  - ';
 
-    console.log('\n### Commits');
-    console.log(joint + markdown.join(joint) + '\n');
+      console.log('\n### Commits');
+      console.log(joint + markdown.join(joint) + '\n');
+    }
   });
 });
