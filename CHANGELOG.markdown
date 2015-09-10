@@ -1,5 +1,18 @@
 # [ChangeLog42](./README.markdown) ChangeLog
 
+## 2015-09-10, [v0.7.0](https://github.com/skenqbx/changelog42/tree/v0.7.0) **_<small>unstable</small>_**
+
+### Commits
+
+  - [[`1d792e6d76`](https://github.com/skenqbx/changelog42/commit/1d792e6d76b76f5620434234a3d28c982471d141)] - **bin**: repair json parameter
+  - [[`4280070b35`](https://github.com/skenqbx/changelog42/commit/4280070b35519f1affe9d12efc8764ae4d3b255b)] - **changelog**: match "working on" at index 0
+  - [[`706fd1e299`](https://github.com/skenqbx/changelog42/commit/706fd1e2991b23a50c53ad3a99e7b5c3ce3c1eaa)] - **deps**: dev dependencies
+  - [[`5b23d2f1bb`](https://github.com/skenqbx/changelog42/commit/5b23d2f1bb001ac3973fe1f9b9f601afa6967251)] - **eslint**: fix indentation
+  - [[`266589bac2`](https://github.com/skenqbx/changelog42/commit/266589bac2717cde7e0dc814ffec44656ae04d32)] - **eslint**: rules for 1.x
+  - [[`d8e24a1342`](https://github.com/skenqbx/changelog42/commit/d8e24a1342885e512e1ebce6e6979de30435239d)] - **lib**: working on windows support
+  - [[`ab323e2ffc`](https://github.com/skenqbx/changelog42/commit/ab323e2ffca25e81cc1eb7b768c1adba5562d311)] - **package**: update AUTHORS
+
+
 ## 2015-06-18, [v0.6.0](https://github.com/skenqbx/changelog42/tree/v0.6.0) **_<small>unstable</small>_**
 
 ### Commits
