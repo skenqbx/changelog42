@@ -9,7 +9,8 @@ var ChangeLog = require('../lib');
 /**
  * ChangeLog Maker
  */
-var i, t, options = {
+var i, t;
+var options = {
   since: '--tags',
   group: true,
   author: true,

@@ -11,7 +11,8 @@ suite('scopes', function() {
   test('regex', function() {
     var matches;
     var changelog = new ChangeLog();
-    var i, subjects = [
+    var i;
+    var subjects = [
       'hello world:', false,
       'hello', false,
       'hello, world:', 'hello, world:',
