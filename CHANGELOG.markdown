@@ -1,5 +1,13 @@
 # [ChangeLog42](./README.markdown) ChangeLog
 
+## 2015-11-25, [v0.8.0](https://github.com/skenqbx/changelog42/tree/v0.8.0) **_<small>unstable</small>_**
+
+### Commits
+
+  - [[`cad29c9e0b`](https://github.com/skenqbx/changelog42/commit/cad29c9e0b6296731ad20b595778c15bf77c4d61)] - **changelog**: add body option to print full commit message
+  - [[`a0f631d3cb`](https://github.com/skenqbx/changelog42/commit/a0f631d3cb687799174e0ffec8ea28c2749d3075)] - **lib**: newlines ftw
+
+
 ## 2015-09-10, [v0.7.0](https://github.com/skenqbx/changelog42/tree/v0.7.0) **_<small>unstable</small>_**
 
 ### Commits
