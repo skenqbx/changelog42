@@ -37,6 +37,7 @@ Usage: changelog42 [--since={tag}] [--commit-url={url}] [options]
    --no-group    do not group commits by scope
    --no-author   do not print author name
    --no-link     do not link commit hashes
+   --body        print full commit message
    --merge       print merge commits
    --json        output JSON
    --commit-url  commit base url

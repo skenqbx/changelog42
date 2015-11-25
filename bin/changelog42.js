@@ -14,6 +14,7 @@ var options = {
   since: '--tags',
   group: true,
   author: true,
+  body: false,
   link: true,
   merge: false,
   commitURL: '<commit-url>'
@@ -37,6 +38,7 @@ for (i = 2; i < process.argv.length; ++i) {
       console.log('   --no-group    do not group commits by scope');
       console.log('   --no-author   do not print author name');
       console.log('   --no-link     do not link commit hashes');
+      console.log('   --body        print full commit message');
       console.log('   --merge       print merge commits');
       console.log('   --json        output JSON');
       console.log('   --commit-url  commit base url');
@@ -57,6 +59,9 @@ for (i = 2; i < process.argv.length; ++i) {
       break;
     case '--merge':
       options.merge = true;
+      break;
+    case '--body':
+      options.body = true;
       break;
     case '--json':
       options.json = true;
