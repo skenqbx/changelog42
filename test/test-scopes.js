@@ -15,6 +15,7 @@ suite('scopes', function() {
     var subjects = [
       'hello world:', false,
       'hello', false,
+      'hello,world:', 'hello,world:',
       'hello, world:', 'hello, world:',
       'hello, world: hello world', 'hello, world:',
       '/hello, world: abc', false,
