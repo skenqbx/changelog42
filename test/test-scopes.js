@@ -19,12 +19,13 @@ suite('scopes', function() {
       'hello, world:', 'hello, world:',
       'hello, world: hello world', 'hello, world:',
       '/hello, world: abc', false,
-      '.hello, world: abc', false,
+      '.hello, world: abc', '.hello, world:',
       ',hello, world: abc', false,
       '_hello/world: abc', false,
       'abc.world: abc', 'abc.world:',
       'abc/world: abc', 'abc/world:',
-      'abc-world: abc', 'abc-world:'
+      'abc-world: abc', 'abc-world:',
+      '.eslintrc: stuff', '.eslintrc:'
     ];
 
     for (i = 0; i < subjects.length; i += 2) {
