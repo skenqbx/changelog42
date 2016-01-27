@@ -30,10 +30,6 @@
     "lint": "eslint ./",
     "test": "npm run lint && istanbul cover _mocha -- ./test",
     "log": "bin/changelog42.js --no-author --commit-url=https://github.com/skenqbx/changelog42/commit",
-    "clean": "rm -rf node_modules/ && rm -rf coverage/ && rm npm-debug.log"
-  },
-  "engines": {
-    "node": ">0.10.38",
-    "npm": "~2.8.3"
+    "clean": "rm -rf node_modules/ && rm -rf coverage/ && rm -f npm-debug.log"
   }
 }
