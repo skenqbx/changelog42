@@ -147,8 +147,8 @@ firefox coverage/lcov-report/index.html
 ### Coverage
 
 ```
-Statements   : XX.XX% ( YY/ZZ )
-Branches     : XX.XX% ( YY/ZZ )
-Functions    : XX.XX% ( YY/ZZ )
-Lines        : XX.XX% ( YY/ZZ )
+Statements   : 21.24% ( 24/113 )
+Branches     : 26.67% ( 20/75 )
+Functions    : 12.5% ( 1/8 )
+Lines        : 21.24% ( 24/113 )
 ```

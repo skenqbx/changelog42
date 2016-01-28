@@ -1,5 +1,17 @@
 # [ChangeLog42](./README.markdown) ChangeLog
 
+## 2016-01-28, [v0.9.0](https://github.com/skenqbx/changelog42/tree/v0.9.0) **_<small>unstable</small>_**
+
+### Commits
+
+  - [[`99676a1a12`](https://github.com/skenqbx/changelog42/commit/99676a1a120f6cb714f0e4479d62e607d9734a1e)] - **deps**: eslint v1.10.3, istanbul v0.4.3, mocha v2.4.3
+  - [[`d592485031`](https://github.com/skenqbx/changelog42/commit/d592485031a1ac75c261f5c285923ea54de4d540)] - **package**: remove engines & fix clean script
+  - [[`ed3c025d24`](https://github.com/skenqbx/changelog42/commit/ed3c025d242c0ad3c2a54c95316a1b9248ec4efd)] - **package**: remove next-update integration
+  - [[`150ef3f78f`](https://github.com/skenqbx/changelog42/commit/150ef3f78f19ecac30f0a85b53f57f68553d3a3b)] - **scope**: replace ', ' with ','
+  - [[`10b13da7a6`](https://github.com/skenqbx/changelog42/commit/10b13da7a68c60011af3a3ae96983698e7cf1d49)] - **scope**: allow leading dot '.'
+  - [[`075e10d46a`](https://github.com/skenqbx/changelog42/commit/075e10d46a5789d5d344c9f11d6fff7a04f98b8d)] - **scope**: allow commas
+
+
 ## 2015-11-25, [v0.8.0](https://github.com/skenqbx/changelog42/tree/v0.8.0) **_<small>unstable</small>_**
 
 ### Commits
