@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-var path = require('path');
-var child_process = require('child_process');
 
 var ChangeLog = require('../lib');
 
